@@ -12,8 +12,8 @@ data: {
 },
 methods:{
     onSelecting(event) {
-		console.log(event.clientX); // x coordinate
-		console.log(event.clientY); // y coordinate
+		console.log(event.clientX);
+		console.log(event.clientY);
 
 		this.bzStartX = event.clientX;
 		this.bzStartY = event.clientY;
@@ -25,13 +25,11 @@ methods:{
 
     },
     outSelecting(event) {
-        // clientX/Y gives the coordinates relative to the viewport in CSS pixels.
-		console.log(event.clientX); // x coordinate
-		console.log(event.clientY); // y coordinate
+		console.log(event.clientX);
+		console.log(event.clientY);
 		this.isSelecting = false;
 		this.bzWidthX = 0;
-		this.bzHeightY = 0;	
-
+		this.bzHeightY = 0;
     },
     mouseMove(event) {
 		if (this.isSelecting) { 
@@ -47,15 +45,8 @@ methods:{
 				this.bzWidthX = Math.abs( event.clientX - this.bzStartX );
 				this.bzLeftX = event.clientX ;
 			}
-
-  		
 		}
-
-    },
-    clickSelecting(event) {
-
     }
-
 }
 
 }) 
