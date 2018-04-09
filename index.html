@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectable Vue</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+</head>
+<body>
+
+	<div id="selectable-box" class="get-flex" 
+		v-on:mousemove="mouseMove($event)" 
+		v-on:mousedown="onSelecting($event)" 
+		v-on:mouseup="outSelecting($event)"
+		v-on:click="clickSelecting($event)"
+	>
+
+		 <p>left: {{bzLeftX}}, top: {{bzTopY}} ,width: {{bzWidthX}} ,height : {{bzHeightY}} , x start: {{bzStartX}} , y start {{bzStartY}}</p>
+		<div id="blueZone" v-bind:style="{ left: bzLeftX + 'px', top: bzTopY + 'px' ,width: bzWidthX + 'px',height : bzHeightY + 'px' }"></div>
+		<div v-for="item in selectableItems" class="block"> {{item}} </div>
+	</div>
+
+</body>
+</html>
+<link rel="stylesheet" type="text/css" href="app.css">
+<script src="app.js"></script>
