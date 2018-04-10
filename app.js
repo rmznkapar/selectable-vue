@@ -30,12 +30,12 @@ methods:{
 
     },
     outSelecting(event) {
-   		this.getPosition();
 		this.isSelecting = false;
 		this.bzWidthX = 0;
 		this.bzHeightY = 0;	
     },
     mouseMove(event) {
+		this.getPosition();
 		if (this.isSelecting) { 
 
 			this.bzWidthX = event.pageX - this.bzStartX;
@@ -62,6 +62,8 @@ methods:{
 				(this.bzLeftX) < (div[i].offsetLeft + div[i].offsetWidth)
 	    	) {
 	    		this.selectedItems[i] = true;
+	    	}else{
+	    		this.selectedItems[i] = false;
 	    	}
     	}
     	console.log(this.selectedItems);
