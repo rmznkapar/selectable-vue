@@ -19,11 +19,11 @@ data: {
 },
 methods:{
     onSelecting(event) {
-		this.bzStartX = event.clientX;
-		this.bzStartY = event.clientY;
+		this.bzStartX = event.pageX;
+		this.bzStartY = event.pageY;
 
-		this.bzLeftX = event.clientX;
-		this.bzTopY = event.clientY;
+		this.bzLeftX = event.pageX;
+		this.bzTopY = event.pageY;
 
 		this.selectedItems = [false,false,false,false,false];
 		this.isSelecting = true;
@@ -40,16 +40,16 @@ methods:{
     mouseMove(event) {
 		if (this.isSelecting) { 
 
-			this.bzWidthX = event.clientX - this.bzStartX;
-			this.bzHeightY = event.clientY - this.bzStartY;
+			this.bzWidthX = event.pageX - this.bzStartX;
+			this.bzHeightY = event.pageY - this.bzStartY;
 
-			if (event.clientY < this.bzStartY) {
-				this.bzHeightY = Math.abs( event.clientY - this.bzStartY );			
-				this.bzTopY = event.clientY ;				
+			if (event.pageY < this.bzStartY) {
+				this.bzHeightY = Math.abs( event.pageY - this.bzStartY );			
+				this.bzTopY = event.pageY ;				
 			}
-			if (event.clientX < this.bzStartX) {
-				this.bzWidthX = Math.abs( event.clientX - this.bzStartX );
-				this.bzLeftX = event.clientX ;
+			if (event.pageX < this.bzStartX) {
+				this.bzWidthX = Math.abs( event.pageX - this.bzStartX );
+				this.bzLeftX = event.pageX ;
 			}
 		}
 
