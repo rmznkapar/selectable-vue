@@ -30,14 +30,12 @@ methods:{
 
     },
     outSelecting(event) {
-   		this.getPosition();
 		this.isSelecting = false;
 		this.bzWidthX = 0;
 		this.bzHeightY = 0;	
-
-
     },
     mouseMove(event) {
+		this.getPosition();
 		if (this.isSelecting) { 
 
 			this.bzWidthX = event.pageX - this.bzStartX;
