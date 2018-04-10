@@ -1,5 +1,6 @@
 body{
 	font-family: arial;
+	user-select: none;	
 }
 .get-flex{
 	display: flex;
@@ -26,4 +27,14 @@ body{
 .selected{
 	background-color: #35495e;
 	color: white;
+}
+header{
+	height: 100px;
+	width: 100%;
+	background-color: #41b883;
+}
+footer{
+	height: 100px;
+	width: 100%;
+	background-color: #41b883;
 }
