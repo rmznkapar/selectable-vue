@@ -9,17 +9,19 @@
 
 	<div 
 		id="selectable-box" 
-		class="get-flex" 
 		v-on:mousemove="mouseMove($event)" 
 		v-on:mousedown="onSelecting($event)" 
 		v-on:mouseup="outSelecting($event)"
 		v-on:click="clickSelecting($event)"
 	>
 		<div id="blueZone" v-bind:style="{ left: bzLeftX + 'px', top: bzTopY + 'px' ,width: bzWidthX + 'px',height : bzHeightY + 'px' }"></div>
-
-		<div v-for="(item,key) in selectableItems" class="bzBlock" v-bind:class="{selected: selectedItems[key]}"> 
-			{{item}} 
+		
+		<div class="get-flex">
+			<div v-for="(item,key) in selectableItems" class="bzBlock" v-bind:class="{selected: selectedItems[key]}"> 
+				{{item}} 
+			</div>			
 		</div>
+
 
 		<div>
 			<ul>
